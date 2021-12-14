@@ -5,7 +5,7 @@ import {auth,db} from "../../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
 import styles from './styles'
-import {AuthContext} from "../../../App";
+import {AuthContext} from "../../providers/AuthProvider";
 
 export default function LoginScreen(props) {
     const [email, setEmail] = useState('')

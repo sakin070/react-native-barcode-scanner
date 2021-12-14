@@ -35,9 +35,7 @@ export default function App() {
     );
 
     useEffect(() => {
-        let unsubscribe;
-
-            unsubscribe =  onAuthStateChanged(auth, userInput => {
+        let unsubscribe =  onAuthStateChanged(auth, userInput => {
                 if (userInput && user===null) {
                     getDoc(doc(db, 'users', userInput.uid))
                         .then((document) => {
@@ -81,7 +79,6 @@ export default function App() {
             <NavigationContainer>
                 <Stack.Navigator>
                     {( !state.isSignedOut ?
-
                             <Stack.Screen name={"Home"}>
                                 { props => <HomeScreen {...props} extraData={user}/>}
                             </Stack.Screen>
@@ -89,14 +86,11 @@ export default function App() {
                             <>
                                 <Stack.Screen name={"Login"} component={LoginScreen}/>
                                 <Stack.Screen name={"Registration"} component={RegistrationScreen}/>
-
                             </>
                     )}
-
                 </Stack.Navigator>
             </NavigationContainer>
         </AuthContext.Provider>
-
   );
 }
 
